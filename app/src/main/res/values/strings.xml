@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PhotoEditor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_cam">open camera</string>
+    <string name="upload_from_galler">Select from gallery</string>
+</resources>
