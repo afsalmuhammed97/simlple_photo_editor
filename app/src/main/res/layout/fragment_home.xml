@@ -8,8 +8,6 @@
     tools:context=".Ui.HomeFragment">
 
 
-
-
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/open_gallery"
         android:layout_width="0dp"
@@ -17,7 +15,6 @@
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="36dp"
         android:clickable="true"
-        android:textAllCaps="false"
         android:contentDescription="@string/app_name"
         android:drawableTop="@drawable/image"
         android:focusable="true"
@@ -25,6 +22,7 @@
         android:stateListAnimator="@null"
         android:text="@string/upload_from_galler"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:backgroundTint="@color/purple_700"
@@ -39,20 +37,22 @@
         app:rippleColor="@color/white" />
 
 
-
-
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/open_camera_bt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="30dp"
+
+        android:contentDescription="@string/app_name"
+
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
         app:layout_constraintVertical_bias="0.378"
-        tools:src="@tools:sample/avatars"
-        android:contentDescription="@string/app_name" />
+        tools:src="@tools:sample/avatars" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/open_camera_bt"
@@ -61,7 +61,6 @@
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="36dp"
         android:clickable="true"
-        android:textAllCaps="false"
         android:contentDescription="@string/app_name"
         android:drawableTop="@drawable/camera"
         android:focusable="true"
@@ -69,6 +68,7 @@
         android:stateListAnimator="@null"
         android:text="@string/open_cam"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:backgroundTint="@color/purple_700"
@@ -81,5 +81,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/white" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"  />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
