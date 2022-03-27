@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.practies.photoeditor.R
 import com.practies.photoeditor.Utill.Constants
 import com.practies.photoeditor.Utill.Constants.CAMERA_REQUEST_CODE
@@ -41,6 +42,7 @@ class HomeFragment : Fragment() {
 
      private var _binding: FragmentHomeBinding?=null
        private val binding get() = _binding!!
+
 
 
     override fun onCreateView(
@@ -83,7 +85,8 @@ class HomeFragment : Fragment() {
     private fun permissionGranted()=
 
         REQUIRED_PERMISSIONS.all {
-            context?.let { it1 -> ContextCompat.checkSelfPermission(it1.applicationContext,it) } == PackageManager.PERMISSION_GRANTED
+            context?.let { it1 -> ContextCompat.checkSelfPermission(
+                it1.applicationContext,it) } == PackageManager.PERMISSION_GRANTED
         }
 
 
@@ -131,68 +134,11 @@ class HomeFragment : Fragment() {
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        binding.imageView2.setImageBitmap(args.corpedImage)
 
-
-
-//    private fun cameraCheckPermission() {
-//
-//     Dexter.withContext(context)
-//         .withPermissions(android.Manifest.permission.READ_EXTERNAL_STORAGE,
-//             android.Manifest.permission.CAMERA ).withListener(
-//             object : MultiplePermissionsListener {
-//                 override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
-//
-//                     report?.let {
-//                         if (report.areAllPermissionsGranted()){
-//                             startCamera()
-//                             Toast.makeText(context,"start cam called",Toast.LENGTH_SHORT).show()
-//                         }
-//                     }
-//                 }
-//
-//                 override fun onPermissionRationaleShouldBeShown(
-//                     p0: MutableList<PermissionRequest>?,
-//                     p1: PermissionToken?
-//                 ) {
-//                     showRotationalDialogForPermission()
-//                 }
-//
-//             }
-//             )
-//
-//
-//    }
-
-
-//    private fun startCamera(){
-//         val intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//        startActivityForResult(intent, CAMERA_REQUEST_CODE)
-//    }
-
-
-//    private fun galleryPermission() {
-//        Dexter.withContext(context).withPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE).withListener(
-//            object :PermissionListener{
-//                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
-//                 //  openFromGallery()
-//                }
-//
-//                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
-//                    TODO("Not yet implemented")
-//                }
-//
-//                override fun onPermissionRationaleShouldBeShown(
-//                    p0: PermissionRequest?,
-//                    p1: PermissionToken?
-//                ) {
-//                   showRotationalDialogForPermission()
-//                }
-//
-//            }
-//        ).onSameThread().check()
-//    }
-
-
+    }
 
 
    private fun showRotationalDialogForPermission(){

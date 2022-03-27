@@ -56,6 +56,13 @@ dependencies {
     implementation("io.coil-kt:coil:1.4.0")
 
 
+    implementation 'com.github.CanHub:Android-Image-Cropper:4.1.0'
+
+
+   // implementation 'com.github.yalantis:ucrop:2.2.6-native'
+
+  // implementation 'com.github.Krokyze:ucropedit:2.2.6-2'
+
     implementation 'com.google.android.material:material:1.6.0-beta01'
 
     // CameraX

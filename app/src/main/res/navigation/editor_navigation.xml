@@ -38,6 +38,9 @@
             android:name="gallery_image"
             app:argType="android.net.Uri"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_editorFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/cameraFragment"

@@ -1,13 +1,16 @@
 package com.practies.photoeditor.Ui
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.practies.photoeditor.R
 import com.practies.photoeditor.databinding.FragmentEditorBinding
+
 
 
 class EditorFragment : Fragment() {
@@ -33,10 +36,32 @@ class EditorFragment : Fragment() {
 
         if (args.galleryImage== null) {
 
-            binding.editImage.setImageBitmap(args.photoImage)
+            binding.cropImageView.setImageBitmap(args.photoImage)
         } else{
-            binding.editImage.setImageURI(args.galleryImage)}
+            binding.cropImageView.setImageUriAsync(args.galleryImage)}
+
+        binding.cropBt.setOnClickListener{
+
+                val cropedImage=binding.cropImageView.croppedImage
+
+                     binding.cropImageView.setImageBitmap(cropedImage)
+
+
+        }
+    }
+
+//    private fun openCropActivity(galleryImage: Uri?) {
+//
+//        if (galleryImage != null) {
+//            context?.let {
+//                UCrop.of( galleryImage, destinationUri)
+//                    .withAspectRatio(16F, 9F)
+//                    .withMaxResultSize(1920, 1080)
+//                    .start(it,this)
+//            }
+//        }
+//        }
+
     }
 
 
-}
